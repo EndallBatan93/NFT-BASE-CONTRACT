@@ -1,19 +1,20 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.8.9;
+pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
+import "./DefaultOperatorFilterer.sol";
 
-contract NFT is ERC721, Ownable {
+contract NFT is ERC721, Ownable, DefaultOperatorFilterer {
 
  using Strings for uint256;
 
- uint256 public constant MAX_TOKENS = 10;
- uint256 public constant TOKENS_RESERVED = 1;
+ uint256 public constant MAX_TOKENS = 1000;
+ uint256 public constant TOKENS_RESERVED = 15;
  uint256 public price =  0;
- uint256 public constant MAX_MINT_PER_TX = 1;
+ uint256 public constant MAX_MINT_PER_TX = 5;
 
  bool public isSaleActive;
  uint256 public totalSupply;
@@ -27,7 +28,7 @@ contract NFT is ERC721, Ownable {
     constructor() ERC721("Endall Batan NFT", "EB-NFT") {
 
         // BASE IPF URI of the NFTS
-        baseUri = "ipfs://xxxxxxxxxxxxxxxxxxxxxxxxxxxx/";
+        baseUri = "ipfs://QmVKSUdAczbE3GZMeKSWLBiFWPUmubb9zBG2FCga2hAeYV/";
         for (uint256 i=1; i <= TOKENS_RESERVED; i++) {
             _safeMint(msg.sender, i);
         }
@@ -75,6 +76,26 @@ contract NFT is ERC721, Ownable {
         require(transferOne && transferTwo, "Transfer failed");
     }
 
+     function transferFrom(address from, address to, uint256 tokenId) public override onlyAllowedOperator {
+        super.transferFrom(from, to, tokenId);
+    }
+
+    function safeTransferFrom(address from, address to, uint256 tokenId) public override onlyAllowedOperator {
+        super.safeTransferFrom(from, to, tokenId);
+    }
+
+    function safeTransferFrom(address from, address to, uint256 tokenId, bytes memory data)
+        public
+        override
+        onlyAllowedOperator
+    {
+        super.safeTransferFrom(from, to, tokenId, data);
+    }
+
+    function tokenURI(uint256) public pure override returns (string memory) {
+        return "";
+    }
+
 
     // INTERNAL FUNCTION
 
@@ -82,5 +103,4 @@ contract NFT is ERC721, Ownable {
         return baseUri;
     }
 
-    
 }

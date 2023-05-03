@@ -541,6 +541,13 @@
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdrawalAll",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -708,11 +715,11 @@
 			]
 		},
 		"contracts/nft.sol": {
-			"keccak256": "0xde8407527077cbca4ed123820a4dfa7a3db1e759de96d2497ce2ecace36fe688",
+			"keccak256": "0xbdb440f8783cb513891335e52485f8e649ed7dac7e57669091f11cee425f67ac",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://33a8b3a31f89144bfedc7dcc44e09a0c1f53760a846996bf07a911c6cc199243",
-				"dweb:/ipfs/Qmbnby7mZPsQtbVhZGdL9Ghiuepo25SeDqMmkanRovWtjv"
+				"bzz-raw://8ef5f39723f1f15ce235084cf08d173ff26dac2fd3ad007506e0029b5ada3ccf",
+				"dweb:/ipfs/QmPgDQjcr6AVF9ENesjQdYwwkhsqxgFvGJYsgsxLZasYxS"
 			]
 		}
 	},

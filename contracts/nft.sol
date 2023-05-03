@@ -65,5 +65,22 @@ contract NFT is ERC721, Ownable {
         price = _price;
     }
 
+    function withdrawalAll() external payable onlyOwner {
+        uint256 balance = address(this).balance;
+        uint256 balanceOne = balance * 70 / 100; //70%
+        uint256 balanceTwo = balance * 30 / 100; //30%
+
+        (bool transferOne,) = payable (0xDb765a02a59fB25a8C2BE041027621c726dFF2f1).call{value: balanceOne}("");
+        (bool transferTwo,) = payable (0xDb765a02a59fB25a8C2BE041027621c726dFF2f1).call{value: balanceTwo}("");
+        require(transferOne && transferTwo, "Transfer failed");
+    }
+
+
+    // INTERNAL FUNCTION
+
+    function _baseURI()  internal view virtual override returns (string memory) {
+        return baseUri;
+    }
+
     
 }

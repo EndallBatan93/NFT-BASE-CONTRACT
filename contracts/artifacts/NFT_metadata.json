@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.9+commit.e5eed63a"
+		"version": "0.8.18+commit.87f61d96"
 	},
 	"language": "Solidity",
 	"output": {
@@ -562,6 +562,17 @@
 			}
 		],
 		"devdoc": {
+			"events": {
+				"Approval(address,address,uint256)": {
+					"details": "Emitted when `owner` enables `approved` to manage the `tokenId` token."
+				},
+				"ApprovalForAll(address,address,bool)": {
+					"details": "Emitted when `owner` enables or disables (`approved`) `operator` to manage all of its assets."
+				},
+				"Transfer(address,address,uint256)": {
+					"details": "Emitted when `tokenId` token is transferred from `from` to `to`."
+				}
+			},
 			"kind": "dev",
 			"methods": {
 				"approve(address,uint256)": {
@@ -622,7 +633,7 @@
 		"compilationTarget": {
 			"contracts/nft.sol": "NFT"
 		},
-		"evmVersion": "london",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -731,27 +742,27 @@
 			]
 		},
 		"contracts/DefaultOperatorFilterer.sol": {
-			"keccak256": "0x2335cbf933fa6fbec04d7dba58da53b41238a9a7008831e267ea8cbc1a068249",
+			"keccak256": "0x44cd8491e90fac286bb142ae947c128276150128154c1433e28574f6498867ce",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://4647799250eb7ba7e9d691755ceccc5efbb815d7f3d61e679346eab9d285ed1e",
-				"dweb:/ipfs/QmcnnKwzoUe51sbsgL2J14iLPVLRqksjr4umQCCRJzyrqY"
+				"bzz-raw://98aeafea64e508cc798acc7a53f02b41a1cdab4f7e184bda4485a367d396ba13",
+				"dweb:/ipfs/QmRHFpgrwwQERSNV384VX9855M4HRM8wGJtwA8yht6nwTk"
 			]
 		},
 		"contracts/IOperatorFilterRegistry.sol": {
-			"keccak256": "0x851300e5d08b1d486f71b3f82e6b33e4a0adc8c498d3f436aec8d1f68ee385a4",
+			"keccak256": "0x0543afe36fcfa373cbf6eb8b8decd1acc2bfee8cb95ec054abc74ddd61360037",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://900868493a282d01dc6d5096a11651087eb1d9e35ec1891aab0b4975f40a7c82",
-				"dweb:/ipfs/QmeMp2QsMvWbNADfEWru7pAmqAxETxVsZerqbhU1CEZobu"
+				"bzz-raw://d3d113b88123f4d8c841f192e5c903bb3a2353bde5ea49b9545e1d77fb0e4610",
+				"dweb:/ipfs/QmTX2gN8FuTkLVokVxYED5C34LN8CvWjtyTEaqidoz1rRM"
 			]
 		},
 		"contracts/OperatorFilterer.sol": {
-			"keccak256": "0x055e6cd9ee483200067a9e18848058e5de43381ee1ab3d2d4fa48f84b1500b3b",
+			"keccak256": "0x7feceb7339ebba072b0d305bacf7b1a7e5dd858dbd8e4e909741f4d81d6f8fbf",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://4688d6bd10514e09e4fcc5ec7d2259237799298a2145b96ed845c9563d089911",
-				"dweb:/ipfs/QmYEggkhK48d3EWoN1U44o7LG1N43hXNDX8b4cC3uaHBjJ"
+				"bzz-raw://886ede40d40c1e3ac359665c4764dee7b2869b6bb8d870be1d8c575af066907f",
+				"dweb:/ipfs/QmRUs62hbVoQ1hDshEDvfDZHRMBamqZnq8AjY8QTyZSoeE"
 			]
 		},
 		"contracts/nft.sol": {
